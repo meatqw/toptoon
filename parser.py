@@ -8,6 +8,7 @@ import translators as ts
 import remanga
 import time
 from random import randint
+from bot import send_msg
 
 url_auth = 'https://toptoon.com/login/login_proc'
 url_latest = 'https://toptoon.com/latest'
@@ -158,6 +159,7 @@ def get_items(url):
                 
             
             print(f'NEW DATA: {count}')
+            send_msg(f'{url}: {count}')
             
         else:
             print('Cookie not valid')
