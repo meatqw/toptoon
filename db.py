@@ -3,9 +3,10 @@ from sqlalchemy import create_engine, MetaData, Table, Integer, String, \
 from datetime import datetime
 import os
 
+path_ = '/toptoon/'
 metadata = MetaData()
 
-engine = create_engine(f"sqlite:///{os.path.abspath('toptoon.db')}")
+engine = create_engine(f"sqlite:///{os.path.abspath(path_ + 'toptoon.db')}")
 
 # items model
 items = Table('items', metadata,

@@ -11,6 +11,7 @@ import os
 login = 'Танторик'
 password = 'Vargon165318'
 
+path_ = '/toptoon/'
 
 def auth():
     """Auth in remanga, parsing and save token"""
@@ -52,15 +53,15 @@ def auth():
 
     for i in driver.get_cookies():
         if i['name'] == 'token':
-            with open(os.path.abspath('cookiesUser'), 'w+') as cookie_file:
+            with open(os.path.abspath(path_ + 'cookiesUser'), 'w+') as cookie_file:
                 cookie_file.write(i['value'])
 
     driver.close()
 
 
 def test_token():
-    if os.path.exists(os.path.abspath('cookiesUser')):
-        cookie = open(os.path.abspath('cookiesUser'), 'r+').read()
+    if os.path.exists(os.path.abspath(path_ + 'cookiesUser')):
+        cookie = open(os.path.abspath(path_ + 'cookiesUser'), 'r+').read()
         
         # get data from site
         headers = {"accept": "*/*",
@@ -78,8 +79,8 @@ def add_title(data):
     """Send title on remanga""" 
     
     
-    if os.path.exists(os.path.abspath('cookiesUser')):
-        cookie = open(os.path.abspath('cookiesUser'), 'r+').read()
+    if os.path.exists(os.path.abspath(path_ + 'cookiesUser')):
+        cookie = open(os.path.abspath(path_ + 'cookiesUser'), 'r+').read()
         
         # get data from site
         headers = {"accept": "*/*",
@@ -91,7 +92,7 @@ def add_title(data):
         
         print(headers)
         
-    with open(os.path.abspath("title.jpg"), "rb") as image_file:
+    with open(os.path.abspath(path_ + "title.jpg"), "rb") as image_file:
         img = base64.b64encode(image_file.read())
     
     link = data['link']

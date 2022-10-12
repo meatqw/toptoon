@@ -14,6 +14,7 @@ url_latest = 'https://toptoon.com/latest'
 url_hashtag = 'https://toptoon.com/hashtag'
 url_weekly = "https://toptoon.com/weekly"
 
+path_ = '/toptoon/'
 
 def cookie_valid_check_from_content(content):
     """CHECK VALIDATION COOKIE"""
@@ -75,15 +76,15 @@ def get_items(url):
     """GET LINKS AND TITLE"""
     
     # check cookies file
-    if os.path.exists(os.path.abspath('cookies')):
-        cookie = open(os.path.abspath('cookies'), 'r+').read()
+    if os.path.exists(os.path.abspath(path_ + 'cookies')):
+        cookie = open(os.path.abspath(path_ + 'cookies'), 'r+').read()
     else:
         print('Cookie file is not exists')
         print('Authorization')
         authorization()
     
-    if os.path.exists(os.path.abspath('cookies')):
-        cookie = open(os.path.abspath('cookies'), 'r+').read()
+    if os.path.exists(os.path.abspath(path_ + 'cookies')):
+        cookie = open(os.path.abspath(path_ + 'cookies'), 'r+').read()
         
         # get data from site
         headers = {"accept": "*/*",
