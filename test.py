@@ -1,4 +1,5 @@
-
 import translators as ts
 
-print(ts.bing('ру', to_language='en'))
+phrase = '좋은 아침입니다'
+print(ts.google(phrase, from_language='ko', to_language='ru'))
+
