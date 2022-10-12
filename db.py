@@ -1,10 +1,11 @@
 from sqlalchemy import create_engine, MetaData, Table, Integer, String, \
     Column, DateTime, ForeignKey, Numeric, CheckConstraint, select
 from datetime import datetime
+import os
 
 metadata = MetaData()
 
-engine = create_engine("sqlite:///toptoon.db")
+engine = create_engine(f"sqlite:///{os.path.abspath('toptoon.db')}")
 
 # items model
 items = Table('items', metadata,

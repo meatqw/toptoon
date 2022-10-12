@@ -75,16 +75,15 @@ def get_items(url):
     """GET LINKS AND TITLE"""
     
     # check cookies file
-    if os.path.exists('cookies'):
-        cookie = open('cookies', 'r+').read()
+    if os.path.exists(os.path.abspath('cookies')):
+        cookie = open(os.path.abspath('cookies'), 'r+').read()
     else:
         print('Cookie file is not exists')
         print('Authorization')
         authorization()
-        os.system('python3 parser.py')
-        
-    if os.path.exists('cookies'):
-        cookie = open('cookies', 'r+').read()
+    
+    if os.path.exists(os.path.abspath('cookies')):
+        cookie = open(os.path.abspath('cookies'), 'r+').read()
         
         # get data from site
         headers = {"accept": "*/*",
@@ -107,7 +106,6 @@ def get_items(url):
                 hashtag_data = hashtag_handler(hashtag_url, headers, url)
                 
                 for i in hashtag_data:
-                    
                     
                     # check data in database
                     old = get_item(i['link'])
@@ -165,7 +163,7 @@ def get_items(url):
             auth = authorization()
             if auth != False:
                 print(f'Restart app with URL: {url}')
-                os.system('python3 parser.py')
+                pass
             else:
                 print('Bad auth')
             
