@@ -40,8 +40,8 @@ def hashtag_handler(url, headers, resource):
                 titles += title + '\n'
                 links += link + '\n'
     
-    en = ts.bing(titles[:-1], to_language='en')
-    ru = ts.bing(titles[:-1], to_language='ru') 
+    en = ts.google(titles[:-1], from_language='ko', to_language='en')
+    ru = ts.google(titles[:-1], from_language='ko', to_language='ru')
     
     n = 0
     while n < len(links.split('\n')[:-1]):
@@ -137,8 +137,8 @@ def get_items(url):
 
                 print('translate')
                 # translat   
-                en = ts.bing(titles[:-1], to_language='en')
-                ru = ts.bing(titles[:-1], to_language='ru')
+                en = ts.google(titles[:-1], from_language='ko', to_language='en')
+                ru = ts.google(titles[:-1], from_language='ko', to_language='ru')
                 
                 print(en)
                         
