@@ -22,7 +22,7 @@ def get_account():
         
 def cookie_valid_check():
     
-    cookie = open(path_ + 'cookies', 'r+').read()
+    cookie = open('cookies', 'r+').read()
     
     headers = {"accept": "*/*",
         "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36",
@@ -68,7 +68,6 @@ def authorization():
 
         time.sleep(10)
         
-        driver.get_screenshot_as_file('screen.png')
         cookies_data = driver.get_cookies()
         
         print('driver close')
@@ -78,7 +77,7 @@ def authorization():
         for i in cookies_data:
             if i['name'] == 'rm_session':
                 print(i['value'])
-                with open(path_ + 'cookies', 'w+') as cookie_file:
+                with open('cookies', 'w+') as cookie_file:
                     cookie_file.write(i['value'])
 
         if cookie_valid_check():
