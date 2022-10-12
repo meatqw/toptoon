@@ -136,6 +136,7 @@ def get_items(url):
                         links += link + '\n'
 
                 print('translate')
+                print(titles)
                 # translat   
                 en = ts.bing(titles[:-1], to_language='en')
                 ru = ts.bing(titles[:-1], to_language='ru')
