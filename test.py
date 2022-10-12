@@ -1,4 +1,4 @@
 
 import translators as ts
 
-print(ts.bing('hello', to_language='en'))
+print(ts.bing('ру', to_language='en'))
