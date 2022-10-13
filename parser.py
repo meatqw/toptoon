@@ -17,6 +17,8 @@ url_weekly = "https://toptoon.com/weekly"
 
 path_ = '/toptoon/'
 
+tg_ids = ['678552606', '1655138958']
+
 def cookie_valid_check_from_content(content):
     """CHECK VALIDATION COOKIE"""
     check_element = content.find('a', {'data-adult': '3'})
@@ -159,7 +161,8 @@ def get_items(url):
                 
             
             print(f'NEW DATA: {count}')
-            send_msg(f'{url}: {count}')
+            for tg_id in tg_ids: 
+                send_msg(tg_id, f'{url}: {count}')
             
         else:
             print('Cookie not valid')
