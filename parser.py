@@ -190,11 +190,11 @@ def main():
     except Exception as e:
         print(e)
         
-    print('WEEKLY')
-    try:
-        get_items(url_weekly)
-    except Exception as e:
-        print(e)
+    # print('WEEKLY')
+    # try:
+    #     get_items(url_weekly)
+    # except Exception as e:
+    #     print(e)
         
     
 main()
