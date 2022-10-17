@@ -73,7 +73,7 @@ def add_data_in_db(data):
     conn = engine.connect()
     conn.execute(ins)
     
-    time.sleep(randint(20, 40))
+    time.sleep(randint(5, 8))
 
 def get_items(url):
     """GET LINKS AND TITLE"""
