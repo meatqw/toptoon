@@ -146,6 +146,7 @@ def get_items(url):
                         
                 print(len(links.split('\n')[:-1]))
                 n = 0
+                links_msg = ''
                 while n < len(links.split('\n')[:-1]):
                     # check data in database
                     old = get_item(links.split('\n')[:-1][n])
@@ -155,14 +156,19 @@ def get_items(url):
                         data = {'link': links.split('\n')[:-1][n], 'orig_title': titles.split('\n')[n], 'en_title': en.split('\n')[n], 'ru_title': ru.split('\n')[n], 'resource': url}
                         print(data)
                         add_data_in_db(data)
+
+                        # add link in msg
+                        links_msg += data['link'] + '\n'
                         
                         count += 1
                     n += 1
                 
             
             print(f'NEW DATA: {count}')
-            for tg_id in tg_ids: 
-                send_msg(tg_id, f'{url}: {count}')
+
+            if count > 0:
+                for tg_id in tg_ids: 
+                    send_msg(tg_id, f'{url}: {count}\n\n{links_msg}')
             
         else:
             print('Cookie not valid')
