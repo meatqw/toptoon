@@ -17,7 +17,7 @@ url_weekly = "https://toptoon.com/weekly"
 
 path_ = '/toptoon/'
 
-tg_ids = ['678552606', '1655138958']
+tg_ids = ['678552606', '1655138958', '892464638']
 
 def cookie_valid_check_from_content(content):
     """CHECK VALIDATION COOKIE"""
