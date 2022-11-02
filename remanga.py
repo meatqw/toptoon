@@ -8,8 +8,8 @@ import time
 import base64
 import os
 
-login = 'Танторик'
-password = 'Vargon165318'
+login = 'natalimyyr'
+password = 'fdkjghdfk5498690FGTSYAFY'
 
 path_ = '/toptoon/'
 
