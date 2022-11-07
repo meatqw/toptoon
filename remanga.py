@@ -71,8 +71,11 @@ def test_token():
                 'origin': 'https://remanga.org',
                 'referer': 'https://remanga.org/'}
     
-    request = requests.get('https://api.remanga.org/api/users/current/', headers=headers)
-    return request.status_code
+        request = requests.get('https://api.remanga.org/api/users/current/', headers=headers)
+        return request.status_code
+    else:
+        return 0
+    
 
 
 def add_title(data):
