@@ -11,11 +11,12 @@ import os
 login = 'natalimyyr'
 password = 'fdkjghdfk5498690FGTSYAFY'
 
-path_ = '/toptoon/'
+# path_ = '/toptoon/'
+path_ = '/home/oleg/python/toptoon/'
 
 def auth():
     """Auth in remanga, parsing and save token"""
-    driver = create_driver(headless=True)
+    driver = create_driver(headless=False)
 
     driver.get('https://remanga.org/')
     time.sleep(10)

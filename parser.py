@@ -15,7 +15,8 @@ url_latest = 'https://toptoon.com/latest'
 url_hashtag = 'https://toptoon.com/hashtag'
 url_weekly = "https://toptoon.com/weekly"
 
-path_ = '/toptoon/'
+# path_ = '/toptoon/'
+path_ = '/home/oleg/python/toptoon/'
 
 tg_ids = ['678552606', '1655138958', '892464638']
 
@@ -100,6 +101,7 @@ def get_items(url):
         content = BeautifulSoup(req_get_data.content, 'html.parser')
         
         count = 0
+        links_msg = ''
         if cookie_valid_check_from_content(content):
             
             print("Cookie is valid")
@@ -113,11 +115,11 @@ def get_items(url):
                     
                     # check data in database
                     old = get_item(i['link'])
-                    print(old)
+                    # print(old)
                     
                     if old == None:
                         
-                        print(i)
+                        # print(i)
                         add_data_in_db(i)
                         
                         count += 1
@@ -142,19 +144,19 @@ def get_items(url):
                 en = ts.google(titles[:-1], from_language='ko', to_language='en')
                 ru = ts.google(titles[:-1], from_language='ko', to_language='ru')
                 
-                print(en)
+                # print(en)
                         
-                print(len(links.split('\n')[:-1]))
+                # print(len(links.split('\n')[:-1]))
                 n = 0
-                links_msg = ''
+                
                 while n < len(links.split('\n')[:-1]):
                     # check data in database
                     old = get_item(links.split('\n')[:-1][n])
-                    print(old)
+                    # print(old)
                     if old == None:
                         
                         data = {'link': links.split('\n')[:-1][n], 'orig_title': titles.split('\n')[n], 'en_title': en.split('\n')[n], 'ru_title': ru.split('\n')[n], 'resource': url}
-                        print(data)
+                        # print(data)
                         add_data_in_db(data)
 
                         # add link in msg
@@ -168,7 +170,10 @@ def get_items(url):
 
             if count > 0:
                 for tg_id in tg_ids: 
-                    send_msg(tg_id, f'{url}: {count}\n\n{links_msg}')
+                    try:
+                        send_msg(tg_id, f'{url}: {count}\n\n{links_msg}')
+                    except Exception as e:
+                        send_msg(tg_id, f'{url}: {count}')
             
         else:
             print('Cookie not valid')

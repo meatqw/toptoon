@@ -7,7 +7,8 @@ import json
 import os
 
 url = 'https://toptoon.com/latest'
-path_ = '/toptoon/'
+# path_ = '/toptoon/'
+path_ = '/home/oleg/python/toptoon/'
 
 def get_account():
     """GET VALID ACCOUNT"""
@@ -46,7 +47,7 @@ def authorization():
     account = get_account()
     if account != None:
     
-        driver = create_driver(headless=True)
+        driver = create_driver(headless=False)
 
         driver.get('https://toptoon.com/latest?layer=/alert/auth/login')
         time.sleep(9)
