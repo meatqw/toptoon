@@ -11,8 +11,8 @@ import os
 login = 'natalimyyr'
 password = 'fdkjghdfk5498690FGTSYAFY'
 
-# path_ = '/toptoon/'
-path_ = '/home/oleg/python/toptoon/'
+path_ = '/toptoon/'
+# path_ = '/home/oleg/python/toptoon/'
 
 def auth():
     """Auth in remanga, parsing and save token"""

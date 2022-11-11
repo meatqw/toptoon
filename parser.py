@@ -15,8 +15,8 @@ url_latest = 'https://toptoon.com/latest'
 url_hashtag = 'https://toptoon.com/hashtag'
 url_weekly = "https://toptoon.com/weekly"
 
-# path_ = '/toptoon/'
-path_ = '/home/oleg/python/toptoon/'
+path_ = '/toptoon/'
+# path_ = '/home/oleg/python/toptoon/'
 
 tg_ids = ['678552606', '1655138958', '892464638']
 

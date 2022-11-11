@@ -3,8 +3,8 @@ from sqlalchemy import create_engine, MetaData, Table, Integer, String, \
 from datetime import datetime
 import os
 
-# path_ = '/toptoon/'
-path_ = '/home/oleg/python/toptoon/'
+path_ = '/toptoon/'
+# path_ = '/home/oleg/python/toptoon/'
 metadata = MetaData()
 
 engine = create_engine(f"sqlite:///{os.path.abspath(path_ + 'toptoon.db')}")

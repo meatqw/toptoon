@@ -7,8 +7,8 @@ import json
 import os
 
 url = 'https://toptoon.com/latest'
-# path_ = '/toptoon/'
-path_ = '/home/oleg/python/toptoon/'
+path_ = '/toptoon/'
+# path_ = '/home/oleg/python/toptoon/'
 
 def get_account():
     """GET VALID ACCOUNT"""
