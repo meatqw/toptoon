@@ -47,7 +47,7 @@ def authorization():
     account = get_account()
     if account != None:
     
-        driver = create_driver(headless=False)
+        driver = create_driver(headless=True)
 
         driver.get('https://toptoon.com/latest?layer=/alert/auth/login')
         time.sleep(9)

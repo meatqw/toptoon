@@ -16,7 +16,7 @@ path_ = '/toptoon/'
 
 def auth():
     """Auth in remanga, parsing and save token"""
-    driver = create_driver(headless=False)
+    driver = create_driver(headless=True)
 
     driver.get('https://remanga.org/')
     time.sleep(10)
